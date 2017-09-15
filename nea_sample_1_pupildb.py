@@ -57,12 +57,23 @@ def showEmails():
 
 
 
+#produce list of DOBs in order of DOB
+def dobSorted():
+	with open ("tutGroup.csv") as f:
+		rawData = csv.reader(f)
+		parseData = list(rawData)
+
+
+		parseData.sort(key=lambda x: (x[3]))
+
+		for count, i in enumerate(parseData):
+			print(parseData[count][0:4])
+
 
 
 def logout():
 	print("Logging Out")
 	exit()
-
 
 
 
@@ -110,14 +121,16 @@ def menusystem():
 	
 	if menuchoice =="7":
 		logout()
-	if menuchoice =="2":
+	elif menuchoice =="2":
 		showall()
-	if menuchoice =="4":
+	elif menuchoice =="4":
 		reportGender()
-	if menuchoice =="3":
+	elif menuchoice =="3":
 		searchID()
-	if menuchoice =="5":
+	elif menuchoice =="5":
 		showEmails()
+	elif menuchoice =="6":
+		dobSorted()
 	else:
 		menusystem()
 
