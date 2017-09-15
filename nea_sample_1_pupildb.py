@@ -42,6 +42,22 @@ def searchID():
 
 
 
+def showEmails():
+	with open ("tutGroup.csv") as f:
+		rawData = csv.reader(f)
+		parseData = list(rawData)
+
+		for count, i in enumerate(parseData):
+			print (	parseData[count][0],
+					parseData[count][1],
+					parseData[count][2],
+					(" "*(22-len(parseData[count][0])-len(parseData[count][1])-len(parseData[count][2]))),
+					parseData[count][8])
+
+
+
+
+
 
 def logout():
 	print("Logging Out")
@@ -100,6 +116,8 @@ def menusystem():
 		reportGender()
 	if menuchoice =="3":
 		searchID()
+	if menuchoice =="5":
+		showEmails()
 	else:
 		menusystem()
 
