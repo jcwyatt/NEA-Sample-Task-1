@@ -99,6 +99,14 @@ def authenticate():
 			exit()
 
 
+
+def addNew():
+
+#newRec=[ID,surname,fname,DoB,address,phone,gender,"LM6",email]
+	newRec=[25,"Gates","Bill","2004-06-12","42, Wallaby Way","0845 877788","M","LM6","b.gates@ms.com"]
+	with open ("tutGroup.csv",'a') as f:
+	    writer = csv.writer(f)
+	    writer.writerow(newRec)
 		
 
 def menusystem():
@@ -121,6 +129,8 @@ def menusystem():
 	
 	if menuchoice =="7":
 		logout()
+	elif menuchoice =="1":
+		addNew()
 	elif menuchoice =="2":
 		showall()
 	elif menuchoice =="4":
